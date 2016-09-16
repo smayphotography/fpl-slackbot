@@ -33,11 +33,13 @@ app.post('/standings', function (req, res) {
 	request('https://fantasy.premierleague.com/drf/leagues-classic-standings/259929', function (error, response, body) {
 		// manipulate the json
 		var results = JSON.parse(response.body).standings.results;
+		var leagueName = JSON.parse(response.body).league;
 		var mappedResults = results.map(function (result) {
 			return result.rank + ') ' + result.player_name + ' - ' + result.total;
-		}).join(', ');
+		}).join('\n ');
 		res.status(200).json({
-			text: 'Player rankings: ' + mappedResults
+			username: "JeffBot",
+			text: 'The results for the ' + result.league.name + 'Fantasy League are as follows: \n' + mappedResults
 		});
 	});
 })
