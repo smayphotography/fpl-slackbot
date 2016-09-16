@@ -39,7 +39,7 @@ app.post('/standings', function (req, res) {
 		}).join('\n ');
 		res.status(200).json({
 			username: "JeffBot",
-			text: 'The results for the ' + result.league.name + 'Fantasy League are as follows: \n' + mappedResults
+			text: 'The results for the ASP Fantasy League are as follows: \n' + mappedResults
 		});
 	});
 })
