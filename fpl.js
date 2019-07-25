@@ -25,12 +25,12 @@ app.listen(port, function () {
 });
 
 
-//app.get('https://fantasy.premierleague.com/drf/leagues-classic-standings/259929', function (req, res)
+//app.get('https://fantasy.premierleague.com/drf/leagues-classic-standings/375055', function (req, res)
 //	{res.status(200).send()});
 //app.post('/hello', fplbot);
 
 app.post('/standings', function (req, res) {
-	request('https://fantasy.premierleague.com/drf/leagues-classic-standings/259929', function (error, response, body) {
+	request('https://fantasy.premierleague.com/drf/leagues-classic-standings/375055', function (error, response, body) {
 		// manipulate the json
 		var results = JSON.parse(response.body).standings.results;
 		var leagueName = JSON.parse(response.body).league;
@@ -39,7 +39,7 @@ app.post('/standings', function (req, res) {
 		}).join('\n ');
 		res.status(200).json({
 			username: "JeffBot",
-			text: 'The results for the ASP Fantasy League are as follows: \n' + mappedResults
+			text: 'The results for the Captify Fantasy League are as follows: \n' + mappedResults
 		});
 	});
 })
