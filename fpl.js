@@ -38,7 +38,7 @@ app.post('/standings', function (req, res) {
 			return result.rank + ') ' + result.player_name + ' - ' + result.total;
 		}).join('\n ');
 		res.status(200).json({
-			username: "JeffBot",
+			username: "jeffbot",
 			text: 'The results for the Captify Fantasy League are as follows: \n' + mappedResults
 		});
 	});
